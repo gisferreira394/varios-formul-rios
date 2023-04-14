@@ -16,5 +16,31 @@ namespace varios_formulários
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "")
+            {
+                MessageBox.Show("Insira nome no campo !!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    textBox1.Focus();
+                return;
+            }
+        //else opcional
+
+        textBox2.Text += textBox1.Text + ", ";
+            textBox1.Clear();
+            textBox1.Focus();
+            }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            textBox2.Text = " ";
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Form2 form2 = new Form2(textBox2.Text);
+            form2.ShowDialog();
+        }
     }
 }
